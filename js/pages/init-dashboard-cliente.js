@@ -28,12 +28,14 @@ function initDashboardCliente() {
 }
 
 function setActiveButton(activeButtonId) {
-    document.querySelectorAll(".btn-nav").forEach(btn => {
+    document.querySelectorAll(".btn-nav").forEach(function(btn){
         if (btn.id !== "btnLogoutCliente") {
             btn.classList.remove("active");
         }
     });
-    document.querySelector("#" + activeButtonId).classList.add("active");
+    let currentClasses = document.querySelector("#" + activeButtonId).getAttribute("class")
+    let newClasses = currentClasses + " active";
+    document.querySelector("#" + activeButtonId).setAttribute("class", newClasses);
 }
 
 function mostrarPanelContratacion() {

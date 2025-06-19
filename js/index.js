@@ -3,8 +3,7 @@ navigateTo("login", initLogin);
 
 console.log("INICIANDO SISTEMA...");
 
-// ------------------------------ PASEADORES ------------------------------
-// Según la tabla: Usuario, Contraseña, Cupo máximo
+
 const paseador1 = new Paseador("Juan", "juan", "Juan123", 10);
 const paseador2 = new Paseador("Lucas", "lucas", "Lucas123", 15);
 const paseador3 = new Paseador("Sofia", "sofia", "Sofia123", 12);
@@ -16,69 +15,51 @@ sistema.agregarPaseador(paseador2);
 sistema.agregarPaseador(paseador3);
 sistema.agregarPaseador(paseador4);
 sistema.agregarPaseador(paseador5);
-// ------------------------------ PASEADORES ------------------------------
 
-// ------------------------------ CLIENTES ------------------------------
-// Según la tabla: Usuario, Contraseña, Nombre del perro, Tamaño
-const cliente1 = new Cliente("Tomas", "tomas", "Tomas123", new Perro("lucky", "mediano"));
-const cliente2 = new Cliente("Ana", "ana", "Ana123", new Perro("luna", "grande"));
-const cliente3 = new Cliente("Bruno", "bruno", "Bruno123", new Perro("boby", "mediano"));
-const cliente4 = new Cliente("Carla", "carla", "Carla123", new Perro("rocky", "grande"));
-const cliente5 = new Cliente("Daniel", "daniel", "Daniel123", new Perro("bella", "chico"));
-const cliente6 = new Cliente("Elena", "elena", "Elena123", new Perro("toby", "chico"));
-const cliente7 = new Cliente("Fede", "fede", "Fede123", new Perro("sasha", "grande"));
-const cliente8 = new Cliente("Gabi", "gabi", "Gabi123", new Perro("duque", "mediano"));
-const cliente9 = new Cliente("Hector", "hector", "Hector123", new Perro("nala", "chico"));
-const cliente10 = new Cliente("Irene", "irene", "Irene123", new Perro("milo", "mediano"));
-const cliente11 = new Cliente("Jose", "jose", "Jose123", new Perro("kira", "chico"));
-const cliente12 = new Cliente("Karen", "karen", "Karen123", new Perro("thor", "grande"));
-const cliente13 = new Cliente("Leo", "leo", "Leo123", new Perro("coco", "chico"));
-const cliente14 = new Cliente("Mariana", "mariana", "Mariana123", new Perro("zeus", "grande"));
-const cliente15 = new Cliente("Nico", "nico", "Nico123", new Perro("lola", "mediano"));
-const cliente16 = new Cliente("Olga", "olga", "Olga123", new Perro("simon", "grande"));
-const cliente17 = new Cliente("Pablo", "pablo", "Pablo123", new Perro("daisy", "chico"));
-const cliente18 = new Cliente("Quimey", "quimey", "Quimey123", new Perro("ragnar", "grande"));
-const cliente19 = new Cliente("Raul", "raul", "Raul123", new Perro("maya", "chico"));
-const cliente20 = new Cliente("Sara", "sara", "Sara123", new Perro("lucky", "mediano"));
+sistema.registrarCliente("Tomas", "tomas", "Tomas123", "lucky", "mediano");
+sistema.registrarCliente("Ana", "ana", "Ana123", "luna", "grande");
+sistema.registrarCliente("Bruno", "bruno", "Bruno123", "boby", "mediano");
+sistema.registrarCliente("Carla", "carla", "Carla123", "rocky", "grande");
+sistema.registrarCliente("Daniel", "daniel", "Daniel123", "bella", "chico");
+sistema.registrarCliente("Elena", "elena", "Elena123", "toby", "chico");
+sistema.registrarCliente("Fede", "fede", "Fede123", "sasha", "grande");
+sistema.registrarCliente("Gabi", "gabi", "Gabi123", "duque", "mediano");
+sistema.registrarCliente("Hector", "hector", "Hector123", "nala", "chico");
+sistema.registrarCliente("Irene", "irene", "Irene123", "milo", "mediano");
+sistema.registrarCliente("Jose", "jose", "Jose123", "kira", "chico");
+sistema.registrarCliente("Karen", "karen", "Karen123", "thor", "grande");
+sistema.registrarCliente("Leo", "leo", "Leo123", "coco", "chico");
+sistema.registrarCliente("Mariana", "mariana", "Mariana123", "zeus", "grande");
+sistema.registrarCliente("Nico", "nico", "Nico123", "lola", "mediano");
+sistema.registrarCliente("Olga", "olga", "Olga123", "simon", "grande");
+sistema.registrarCliente("Pablo", "pablo", "Pablo123", "daisy", "chico");
+sistema.registrarCliente("Quimey", "quimey", "Quimey123", "ragnar", "grande");
+sistema.registrarCliente("Raul", "raul", "Raul123", "maya", "chico");
+sistema.registrarCliente("Sara", "sara", "Sara123", "lucky", "mediano");
 
-sistema.agregarCliente(cliente1);
-sistema.agregarCliente(cliente2);
-sistema.agregarCliente(cliente3);
-sistema.agregarCliente(cliente4);
-sistema.agregarCliente(cliente5);
-sistema.agregarCliente(cliente6);
-sistema.agregarCliente(cliente7);
-sistema.agregarCliente(cliente8);
-sistema.agregarCliente(cliente9);
-sistema.agregarCliente(cliente10);
-sistema.agregarCliente(cliente11);
-sistema.agregarCliente(cliente12);
-sistema.agregarCliente(cliente13);
-sistema.agregarCliente(cliente14);
-sistema.agregarCliente(cliente15);
-sistema.agregarCliente(cliente16);
-sistema.agregarCliente(cliente17);
-sistema.agregarCliente(cliente18);
-sistema.agregarCliente(cliente19);
-sistema.agregarCliente(cliente20);
-// ------------------------------ CLIENTES ------------------------------
+// Recuperar los clientes por username
+const cliente15 = sistema.clientes.find(c => c.username === "nico");
+const cliente6 = sistema.clientes.find(c => c.username === "elena");
+const cliente20 = sistema.clientes.find(c => c.username === "sara");
+const cliente11 = sistema.clientes.find(c => c.username === "jose");
+const cliente9 = sistema.clientes.find(c => c.username === "hector");
+const cliente3 = sistema.clientes.find(c => c.username === "bruno");
+const cliente4 = sistema.clientes.find(c => c.username === "carla");
+const cliente14 = sistema.clientes.find(c => c.username === "mariana");
+const cliente2 = sistema.clientes.find(c => c.username === "ana");
+const cliente19 = sistema.clientes.find(c => c.username === "raul");
 
-// ------------------------------ CONTRATACIONES ------------------------------
-// Según la tabla de contrataciones: Cliente, Paseador (p2), Perro, Estado
+const contratacion1 = new Contratacion(cliente15, paseador2, "pendiente");
+const contratacion2 = new Contratacion(cliente6, paseador2, "rechazada");
+const contratacion3 = new Contratacion(cliente20, paseador2, "aprobada");
+const contratacion4 = new Contratacion(cliente11, paseador2, "rechazada");
+const contratacion5 = new Contratacion(cliente9, paseador2, "pendiente");
+const contratacion6 = new Contratacion(cliente3, paseador2, "aprobada");
+const contratacion7 = new Contratacion(cliente4, paseador2, "pendiente");
+const contratacion8 = new Contratacion(cliente14, paseador2, "pendiente");
+const contratacion9 = new Contratacion(cliente2, paseador2, "rechazada");
+const contratacion10 = new Contratacion(cliente19, paseador2, "aprobada");
 
-// Contrataciones con paseador2 (lucas) según la tabla
-const contratacion1 = new Contratacion(cliente15, paseador2, "pendiente"); // nico - lola (mediano)
-const contratacion2 = new Contratacion(cliente6, paseador2, "rechazada"); // elena - toby (chico)
-const contratacion3 = new Contratacion(cliente20, paseador2, "aprobada"); // sara - lucky (mediano)
-const contratacion4 = new Contratacion(cliente11, paseador2, "rechazada"); // jose - kira (chico)
-const contratacion5 = new Contratacion(cliente9, paseador2, "pendiente"); // hector - nala (chico)
-const contratacion6 = new Contratacion(cliente3, paseador2, "aprobada"); // bruno - boby (mediano)
-const contratacion7 = new Contratacion(cliente4, paseador2, "pendiente"); // carla - rocky (grande)
-const contratacion8 = new Contratacion(cliente14, paseador2, "pendiente"); // mariana - zeus (grande)
-const contratacion9 = new Contratacion(cliente2, paseador2, "rechazada"); // ana - luna (grande)
-const contratacion10 = new Contratacion(cliente19, paseador2, "aprobada"); // raul - maya (chico)
-
-// Agregar contrataciones al sistema y a los arreglos individuales de clientes y paseadores
 sistema.agregarContratacion(contratacion1);
 paseador2.agregarContratacion(contratacion1);
 
@@ -108,8 +89,6 @@ paseador2.agregarContratacion(contratacion9);
 
 sistema.agregarContratacion(contratacion10);
 paseador2.agregarContratacion(contratacion10);
-
-// ------------------------------ CONTRATACIONES ------------------------------
 
 console.log("PRECARGA COMPLETADA!");
 console.log("Sistema inicializado con:");
